@@ -9,18 +9,19 @@ import useStyles from './styles';
 import instaPic from './images/instaPic.png';
 
 const App = () => {
-  const [currentId, setCurrentId] = useState(0);
+  const [currentId, setCurrentId] = useState(null);
   const dispatch = useDispatch();
   const classes = useStyles();
 
   useEffect(() => {
     dispatch(getPosts());
-  }, [currentId, dispatch]);
+    // when currentId changes (edit or when set to null), fetch posts
+}, [currentId, dispatch]);
 
   return (
     <Container maxWidth="lg">
       <AppBar className={classes.appBar} position="static" color="inherit">
-        <Typography className={classes.heading} variant="h2" align="center">Memories</Typography>
+        <Typography className={classes.heading} variant="h2" align="center">InstaPic</Typography>
         <img className={classes.image}  src={instaPic} alt="instaPic" height="60" />
       </AppBar>
       <Grow in>
