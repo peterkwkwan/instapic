@@ -9,7 +9,7 @@ import useStyles from './styles';
 import instaPic from './images/instaPic.png';
 
 const App = () => {
-  const [currentId, setCurrentId] = useState(null);
+  const [currentId, setCurrentId] = useState(0);
   const dispatch = useDispatch();
   const classes = useStyles();
 
