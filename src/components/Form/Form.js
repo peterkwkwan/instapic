@@ -38,7 +38,7 @@ const Form = ({ currentId, setCurrentId }) => {
   }
 
   const clear = () => {
-    setCurrentId(null)
+    setCurrentId(0)
     setPostData({
       // creator: '',
       title: '',
@@ -68,16 +68,6 @@ const Form = ({ currentId, setCurrentId }) => {
         <Typography variant="h6">
           {currentId ? 'Edit Image' : 'Post image'}
         </Typography>
-        {/* <TextField
-          name="creator"
-          variant="outlined"
-          label="Creator"
-          fullWidth
-          onChange={(e) =>
-            setPostData({ ...postData, creator: e.target.value })
-          }
-          value={postData.creator}
-        /> */}
         <TextField
           name="title"
           variant="outlined"
