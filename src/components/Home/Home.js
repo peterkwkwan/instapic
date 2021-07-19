@@ -12,6 +12,7 @@ export const Home = () => {
 
   useEffect(() => {
     dispatch(getPosts());
+    console.log('gettingposts')
     // when currentId changes (edit or when set to null), fetch posts
   }, [currentId, dispatch])
 

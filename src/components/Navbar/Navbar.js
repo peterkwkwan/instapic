@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { AppBar, Typography, Avatar, Toolbar, Button } from '@material-ui/core'
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import decode from 'jwt-decode';
 
 import useStyles from './styles'
 import instaPic from '../../images/instaPic.png'
@@ -15,6 +16,13 @@ export const Navbar = () => {
 
   useEffect(() => {
     const token = user?.token;
+    if(token) {
+      const decodedToken = decode(token);
+      // if token is expired, logout the user
+      if(decodedToken.exp * 1000 < new Date().getTime()){
+        logout();
+      }
+    }
     setUser(JSON.parse(localStorage.getItem('profile')));
   }, [location]);
 
