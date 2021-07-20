@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Container, Grow, Grid } from '@material-ui/core'
 import { useDispatch } from 'react-redux'
 
+import { Navbar } from '../Navbar/Navbar'
 import { getPosts } from '../../actions/posts'
 import Posts from '../Posts/Posts'
 import Form from '../Form/Form'
@@ -11,7 +12,7 @@ export const Home = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(getPosts());
+    dispatch(getPosts())
     console.log('gettingposts')
     // when currentId changes (edit or when set to null), fetch posts
   }, [currentId, dispatch])
@@ -19,6 +20,7 @@ export const Home = () => {
   return (
     <Grow in>
       <Container>
+      <Navbar />
         <Grid
           container
           justifyContent="space-between"

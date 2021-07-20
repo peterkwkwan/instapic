@@ -1,8 +1,11 @@
 import React from 'react'
 import { TextField, Grid, InputAdornment, IconButton } from '@material-ui/core'
 import { Visibility, VisibilityOff } from '@material-ui/icons'
+import useStyles from './styles'
 
 export const Input = ({ name, half, label, handleChange, autoFocus, type, handleShowPassword }) => {
+  const classes = useStyles()
+
   return (
     <Grid item xs={12} sm={half ? 6 : 12}>
       <TextField
@@ -10,11 +13,22 @@ export const Input = ({ name, half, label, handleChange, autoFocus, type, handle
         label={label}
         onChange={handleChange}
         variant="outlined"
-        required
+        size="small"
         fullWidth
+        required
+        className={classes.textField}
         autoFocus={autoFocus}
         type={type}
-        InputProps={
+        InputLabelProps={{
+          classes: {
+            root: classes.labelRoot,
+          }
+        }}
+        InputProps={{
+          classes: {
+            input: classes.inputRoot
+          }
+        },
           name === 'password' ? {
             endAdornment: (
               <InputAdornment position="end">
