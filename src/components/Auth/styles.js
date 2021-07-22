@@ -1,8 +1,17 @@
 import { makeStyles } from '@material-ui/core/styles'
 
 export default makeStyles((theme) => ({
+  container: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%',
+    margin: '32px auto 0',
+    paddingBottom: '32px',
+    maxWidth: '1280px'
+  },
   paper: {
-    marginTop: '20px',
+    margin: '5% 10%',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -26,7 +35,7 @@ export default makeStyles((theme) => ({
   separator: {
     display: 'flex',
     alignItems: 'center',
-    marginBottom: '30px'
+    marginBottom: '30px',
   },
   line: {
     borderBottom: '1px solid #DBDBDB',
@@ -37,7 +46,7 @@ export default makeStyles((theme) => ({
     color: '#8E8E8E',
     fontFamily: 'Arial',
     fontSize: '14px',
-    fontWeight: 600
+    fontWeight: 600,
   },
   googleButton: {
     marginBottom: theme.spacing(2),
@@ -60,6 +69,9 @@ export default makeStyles((theme) => ({
       backgroundColor: 'hsl(204, 93%, 84%)',
       color: '#fff',
     },
+    '&:hover' : {
+      backgroundColor: 'hsl(204, 100%, 48%)',
+    }
   },
   switchModeContainer: {
     padding: '20px 20px',
@@ -76,24 +88,23 @@ export default makeStyles((theme) => ({
     marginTop: '25px',
     marginBottom: '15px',
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   appStoreButton: {
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   authFooter: {
     display: 'flex',
     justifyContent: 'center',
-    position: 'fixed',
+    position: 'relative',
     width: '100%',
-    bottom: '5%',
-    left: '0'
+    maxWidth: '1280px',
+    paddingBottom: '20px'
   },
   authContent: {
     display: 'flex',
     width: '100%',
-    justifyContent: 'space-evenly'
-    
-  }
+    justifyContent: 'space-evenly',
+  },
 }))

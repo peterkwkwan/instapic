@@ -9,35 +9,37 @@ export default makeStyles((theme) => ({
     width: '100%',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
-    padding: '10px 50px',
+    height: '60px'
+  },
+  brandContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    width: '1280px'
   },
   heading: {
-    color: 'rgba(0,183,255, 1)',
+    color: 'black',
     textDecoration: 'none',
+    fontFamily: 'Satisfy, cursive',
+    fontSize: '35px',
+    width: '30%',
+    paddingLeft: '5%'
   },
   image: {
     marginLeft: '15px',
   },
   toolbar: {
     display: 'flex',
-    justifyContent: 'flex-end',
-    width: '400px',
-  },
-  profile: {
-    display: 'flex',
     justifyContent: 'space-between',
-    width: '400px',
+    width: '30%',
+    paddingRight: '5%'
   },
   userName: {
     display: 'flex',
     alignItems: 'center',
   },
-  brandContainer: {
-    display: 'flex',
-    alignItems: 'center',
-  },
+
   purple: {
     color: theme.palette.getContrastText(deepPurple[500]),
     backgroundColor: deepPurple[500],

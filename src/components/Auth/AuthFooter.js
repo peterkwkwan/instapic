@@ -23,8 +23,8 @@ export const AuthFooter = () => {
   const classes = useStyles()
 
   return (
-    <div className={classes.authFooter}>
-      <div style={{ width: '25%', color: '#8e8e8e', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+    <div className={`${classes.authFooter} d-none d-lg-block`}>
+      <div style={{ width: '100%', color: '#8e8e8e', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
         <Typography variant="caption">tech stack below</Typography>
         <div className={classes.authContent}>
           {techStack.map((stack) => (

@@ -6,8 +6,10 @@ import { Navbar } from '../Navbar/Navbar'
 import { getPosts } from '../../actions/posts'
 import Posts from '../Posts/Posts'
 import Form from '../Form/Form'
+import useStyles from './styles'
 
 export const Home = () => {
+  const classes = useStyles()
   const [currentId, setCurrentId] = useState(0)
   const dispatch = useDispatch()
 
@@ -23,9 +25,8 @@ export const Home = () => {
       <Navbar />
         <Grid
           container
-          justifyContent="space-between"
-          alignItems="stretch"
-          spacing={3}
+          className={classes.container}
+          spacing={1}
         >
           <Grid item xs={12} sm={7}>
             <Posts setCurrentId={setCurrentId} />
