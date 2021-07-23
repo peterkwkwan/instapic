@@ -9,6 +9,8 @@ import { useDispatch } from 'react-redux';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
+import CommentIcon from '../../../images/comment.png';
+import SendIcon from '../../../images/send.png';
 import { likePost, deletePost } from '../../../actions/posts';
 import useStyles from './styles';
 
@@ -43,7 +45,11 @@ const Post = ({ post, setCurrentId }) => {
       </div>
       <CardMedia className={classes.media} image={post.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} title={post.title} />
       <div className={classes.icons}>
-        <div style={{cursor: 'pointer'}} disabled={!user?.result} color="primary" onClick={() => dispatch(likePost(post._id))}><Likes/> </div>
+        <div style={{cursor: 'pointer'}} disabled={!user?.result} color="primary" onClick={() => dispatch(likePost(post._id))}>
+          <Likes/> 
+          <img src={CommentIcon} alt="Comment" height="22px"/>
+          <img src={SendIcon} alt="Send" height="22px"/>
+          </div>
       </div>
       <Typography variant="subtitle1">&nbsp;{post.likes.length == 0 ?  `Be the first to like this!`: post.likes.length > 2 ? `You and ${post.likes.length - 1} others` : `${post.likes.length} like${post.likes.length > 1 ? 's' : ''}` }</Typography>
       <Typography className={classes.title} gutterBottom variant="h5" component="h2">{post.title}</Typography>
