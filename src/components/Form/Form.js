@@ -22,14 +22,14 @@ const Form = ({ currentId, setCurrentId }) => {
   const user = JSON.parse(localStorage.getItem('profile'))
 
   useEffect(() => {
-    if (post) setPostData(post)
+    if (post) setPostData({...post, tags: post.tags.join(' ')})
   }, [post])
 
   const handleSubmit = (e) => {
     // prevent the browser from reloading
     e.preventDefault()
     if (currentId === 0) {
-      dispatch(createPost({ ...postData, name: user?.result.name }))
+      dispatch(createPost({ ...postData, name: user?.result.name, username: user?.result.username }))
       clear()
     } else {
       dispatch(updatePost(currentId, { ...postData, name: user?.result.name }))

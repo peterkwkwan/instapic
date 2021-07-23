@@ -11,7 +11,6 @@ export default makeStyles({
   card: {
     display: 'flex',
     flexDirection: 'column',
-    // justifyContent: 'space-between',
     borderRadius: 0,
     height: '1025px',
     width: '100%',
@@ -19,7 +18,7 @@ export default makeStyles({
     marginBottom: '25px'
   },
   header: {
-    height: '50px',
+    height: '60px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center'
@@ -36,24 +35,27 @@ export default makeStyles({
     display: 'flex',
   },
   icons: {
+    width: 100,
     display: 'flex',
     justifyContent: 'space-between',
-    margin: '20px',
+    margin: '15px 0 0 18px',
+  },
+  postContent: {
+    margin: '5px 0 10px 18px'
   },
   heart: {
     color: 'hsl(360, 80%, 55%)',
-    fontSize: '28px'
+    fontSize: '30px',
+    position: 'relative',
+    bottom: 4
   },
   heartOutline: {
     color: 'black',
-    fontSize: '28px'
-  },
-  title: {
-    padding: '0 16px',
+    fontSize: '30px',
+    position: 'relative',
+    bottom: 4
   },
   cardActions: {
-    padding: '0 16px 8px 16px',
-    display: 'flex',
-    justifyContent: 'space-between',
+    marginTop: 15
   },
 });

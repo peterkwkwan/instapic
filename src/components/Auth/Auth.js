@@ -72,6 +72,17 @@ export const Auth = () => {
     console.log('Google Sign In failed:', error)
   }
 
+  const googlePlayRedirect = () => {
+    window.open(
+      'https://play.google.com/store/apps/details?id=com.instagram.android&hl=en&gl=US',
+      '_blank',
+    )
+  }
+
+  const appStoreRedirect = () => {
+    window.open('https://apps.apple.com/us/app/instagram/id389801252', '_blank')
+  }
+
   return (
     <div
       style={{
@@ -108,13 +119,18 @@ export const Auth = () => {
                       handleChange={handleChange}
                       half
                     />
+                    <Input
+                      name="username"
+                      label="Username"
+                      handleChange={handleChange}
+                    />
                   </React.Fragment>
                 )}
                 <Input
                   name="email"
-                  label="Email Address"
+                  label={isSignup? 'Email Address' : 'Email or Username'}
                   handleChange={handleChange}
-                  type="email"
+                  type={isSignup? 'email' : 'text'}
                 />
                 <Input
                   name="password"
@@ -142,7 +158,8 @@ export const Auth = () => {
                     ? !formData.email ||
                       !formData.password ||
                       !formData.firstName ||
-                      !formData.lastName
+                      !formData.lastName ||
+                      !formData.username
                     : !formData.email || !formData.password
                 }
                 className={classes.submit}
@@ -214,14 +231,25 @@ export const Auth = () => {
                 src={googlePlayBadge}
                 alt="googlePlay"
                 height="75"
-                style={{ position: 'relative', right: '11px' }}
+                onClick={googlePlayRedirect}
+                style={{
+                  position: 'relative',
+                  right: '11px',
+                  cursor: 'pointer',
+                }}
               />
               <img
                 className={classes.image}
                 src={appStoreIcon}
                 alt="googlePlay"
                 height="53"
-                style={{ position: 'relative', top: '11px', right: '11px' }}
+                onClick={appStoreRedirect}
+                style={{
+                  position: 'relative',
+                  top: '11px',
+                  right: '11px',
+                  cursor: 'pointer',
+                }}
               />
             </div>
           </div>
