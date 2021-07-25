@@ -43,7 +43,7 @@ const Post = ({ post, setCurrentId }) => {
     <Card className={classes.card}>
       <div className={classes.header}>
         <div style={{display: 'flex', alignItems: 'center'}}>
-        <Typography variant="h6" className={classes.userIcon}><span style={{position: 'relative', top: 1, left: 1}}>{post.name.charAt(0)}</span></Typography> 
+        <Typography variant="h6" className={classes.userIcon}><span style={{position: 'relative', top: 1, left: 1}}>{post.name.charAt(0).toUpperCase()}</span></Typography> 
         <Typography variant="subtitle2" style={{marginLeft: 10}}>{post.username ? post.username : post.name}</Typography>
         </div>
         {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && (
