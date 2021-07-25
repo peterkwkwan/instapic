@@ -117,10 +117,10 @@ export const Navbar = () => {
           <Avatar
             onClick={handleClick}
             className={classes.avatar}
-            alt={user.result.name}
-            src={user.result.imageUrl}
+            alt={user?.result.name}
+            src={user?.result.imageUrl}
           >
-            {user.result.name.charAt(0)}
+            {user?.result.name.charAt(0)}
           </Avatar>
           <StyledMenu
             id="customized-menu"

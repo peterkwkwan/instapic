@@ -1,0 +1,1 @@
+export const SERVERURL = 'https://instapic-server-pkwan.herokuapp.com/';

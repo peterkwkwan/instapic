@@ -10,8 +10,8 @@ const App = () => {
     <BrowserRouter>
       <Container maxWidth="lg">
         <Switch>
-          <Route path='/' exact component={Home}/>
           <Route path='/signin' exact component={Auth}/>
+          <Route path='/' exact component={Home}/>
         </Switch>
       </Container>
     </BrowserRouter>

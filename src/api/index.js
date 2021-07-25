@@ -1,6 +1,7 @@
 import axios from 'axios'
+import {SERVERURL} from '../constants/urls'
 
-const API = axios.create({ baseURL: 'http://localhost:5000' })
+const API = axios.create({ baseURL: SERVERURL })
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem('profile')) {
@@ -18,5 +19,3 @@ export const deletePost = (id) => API.delete(`/posts/${id}`);
 
 export const signIn = (formData) => API.post('/user/signin', formData);
 export const signUp = (formData) => API.post('/user/signup', formData);
-
-// const url = 'https://instapic-server-pkwan.herokuapp.com/posts';
