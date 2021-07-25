@@ -6,7 +6,7 @@
 
 Git source can be found here: https://gitlab.com/peterkwkwan/instapic-client
 
-###`npm i`
+### `npm i`
 >Installs the necessary dependencies
 
 ### `npm start` 
