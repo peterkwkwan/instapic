@@ -14,6 +14,7 @@ const Form = ({ currentId, setCurrentId }) => {
     tags: '',
     selectedFile: '',
   })
+  
   const post = useSelector((state) =>
     currentId ? state.posts.find((p) => p._id === currentId) : null,
   )
@@ -48,15 +49,6 @@ const Form = ({ currentId, setCurrentId }) => {
     })
   }
 
-  if(!user?.result?.name){
-    return (
-      <Paper className={classes.paper}>
-        <Typography variant="h6" align="center">
-          Please Sign In to create your own InstaPic post!
-        </Typography>
-      </Paper>
-    )
-  }
   return (
     <Paper className={classes.paper}>
       <form
@@ -72,6 +64,7 @@ const Form = ({ currentId, setCurrentId }) => {
           name="title"
           variant="outlined"
           label="Title"
+          inputProps={{ "data-testid": "title" }}
           fullWidth
           onChange={(e) => setPostData({ ...postData, title: e.target.value })}
           value={postData.title}
@@ -114,11 +107,13 @@ const Form = ({ currentId, setCurrentId }) => {
           Submit
         </Button>
         <Button
+        title="dummyButton"
           variant="contained"
           color="secondary"
           size="large"
           onClick={clear}
           fullWidth
+          data-testid="clear"
         >
           Clear
         </Button>

@@ -101,7 +101,7 @@ export const Auth = () => {
         />
         <div style={{ maxWidth: '550px' }}>
           <Paper className={classes.paper} elevation={1}>
-            <h1 className={classes.title}>InstaPic</h1>
+            <h1 className={classes.title} data-testid="header">InstaPic</h1>
             <form className={classes.form} onSubmit={handleSubmit}>
               <Grid container spacing={2}>
                 {isSignup && (
@@ -150,6 +150,7 @@ export const Auth = () => {
               </Grid>
 
               <Button
+                title="dummyButton"
                 type="submit"
                 fullWidth
                 variant="contained"
@@ -215,8 +216,8 @@ export const Auth = () => {
                   ? 'Already have an account?'
                   : " Don't have an account?"}
                 &nbsp;
-                <span className={classes.switchMode} onClick={switchMode}>
-                  {isSignup ? 'Login' : 'Sign up'}{' '}
+                <span className={classes.switchMode} data-testid="switchMode" onClick={switchMode}>
+                  {isSignup ? 'Login': 'Sign up'}
                 </span>
               </Typography>
             </div>
