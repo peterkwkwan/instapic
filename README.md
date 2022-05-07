@@ -2,9 +2,7 @@
 
 ### Getting started
 
-`git clone https://gitlab.com/peterkwkwan/instapic-client.git` from an empty directory.
-
-Git source can be found here: https://gitlab.com/peterkwkwan/instapic-client
+`git clone https://github.com/peterkwkwan/instapic.git` from an empty directory.
 
 ### `npm i`
 >Installs the necessary dependencies
